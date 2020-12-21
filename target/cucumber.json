@@ -1,0 +1,90 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-12-21T21:57:07.576Z",
+        "line": 3,
+        "name": "User should be able to enter the credentials provided to the text boxex, click submit button and see the main page",
+        "description": "",
+        "id": "as-a-user--i-should-be-able-to-login-with-the-provided-credentials.;user-should-be-able-to-enter-the-credentials-provided-to-the-text-boxex--click-submit-button-and-see-the-main-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5517000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user is on login page",
+            "match": {
+              "location": "com.metronet.mis.step_definitions.LoginPageStepDefinitions.userIsOnLoginPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 42000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user enters username to username text box",
+            "match": {
+              "location": "com.metronet.mis.step_definitions.LoginPageStepDefinitions.userEntersUsernameToUsernameTextBox()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 50000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enters password to password text box",
+            "match": {
+              "location": "com.metronet.mis.step_definitions.LoginPageStepDefinitions.userEntersPasswordToPasswordTextBox()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1691000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user clicks on submit button",
+            "match": {
+              "location": "com.metronet.mis.step_definitions.LoginPageStepDefinitions.userClicksOnSubmitButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 28000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user should be able to see \"View / Edit Subscriber (v1.123)\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"View / Edit Subscriber (v1.123)\"",
+                  "offset": 27
+                }
+              ],
+              "location": "com.metronet.mis.step_definitions.LoginPageStepDefinitions.userShouldBeAbleToSee(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "As a user, I should be able to login with the provided credentials.",
+    "description": "",
+    "id": "as-a-user--i-should-be-able-to-login-with-the-provided-credentials.",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/LoginPage.feature",
+    "tags": []
+  }
+]
