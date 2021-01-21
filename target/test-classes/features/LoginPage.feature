@@ -5,4 +5,4 @@ Feature: As a user, I should be able to login with the provided credentials.
     And user enters username to username text box
     And user enters password to password text box
     When user clicks on submit button
-    Then user should be able to see "View / Edit Subscriber (v1.123)"
+    Then user should be able to see "View / Edit Subscriber (v1.124)"

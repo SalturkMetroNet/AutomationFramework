@@ -1,6 +1,6 @@
 package com.metronet.mis.step_definitions;
 
-import com.metronet.mis.pages.LoginPage;
+import com.metronet.mis.pages.ves.LoginPage;
 import com.metronet.mis.utilities.ConfigurationReader;
 import com.metronet.mis.utilities.Driver;
 import io.cucumber.java.en.And;

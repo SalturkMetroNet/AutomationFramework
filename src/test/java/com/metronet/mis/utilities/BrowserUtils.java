@@ -1,5 +1,7 @@
 package com.metronet.mis.utilities;
 
+import java.util.concurrent.TimeUnit;
+
 public class BrowserUtils
 {
 	public static void waitFor(int seconds)
@@ -12,5 +14,10 @@ public class BrowserUtils
 		{
 			e.printStackTrace();
 		}
+	}
+
+	public static void impWait(int max)
+	{
+		Driver.getDriver().manage().timeouts().implicitlyWait(max, TimeUnit.SECONDS);
 	}
 }
