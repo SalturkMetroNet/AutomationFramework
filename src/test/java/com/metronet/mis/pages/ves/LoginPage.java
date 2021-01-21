@@ -1,5 +1,6 @@
-package com.metronet.mis.pages;
+package com.metronet.mis.pages.ves;
 
+import com.metronet.mis.pages.BasePage;
 import com.metronet.mis.utilities.ConfigurationReader;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
@@ -27,6 +28,4 @@ public class LoginPage extends BasePage
 		password.sendKeys(passwordString, Keys.ENTER);
 		logger.info("Login with " + usernameString + " username and " + passwordString + " password");
 	}
-
-
 }
