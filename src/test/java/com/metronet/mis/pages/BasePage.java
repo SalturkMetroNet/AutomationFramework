@@ -3,14 +3,16 @@ package com.metronet.mis.pages;
 import com.metronet.mis.utilities.Driver;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage
 {
-	private final static Logger logger = Logger.getLogger(BasePage.class);
-	protected WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+	protected final static Logger logger = Logger.getLogger(BasePage.class);
+	protected WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
 
 	public BasePage()
 	{

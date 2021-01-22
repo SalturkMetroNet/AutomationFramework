@@ -25,7 +25,8 @@ public class LoginPage extends BasePage
 		String usernameString = ConfigurationReader.getProperty("username");
 		String passwordString = ConfigurationReader.getProperty("password");
 		username.sendKeys(usernameString);
-		password.sendKeys(passwordString, Keys.ENTER);
+		password.sendKeys(passwordString);
+		submitButton.click();
 		logger.info("Login with " + usernameString + " username and " + passwordString + " password");
 	}
 }

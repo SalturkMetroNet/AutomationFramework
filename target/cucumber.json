@@ -3,88 +3,40 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-18T22:29:03.101Z",
+        "start_timestamp": "2021-01-22T14:01:37.503Z",
         "line": 3,
-        "name": "User should be able to enter the credentials provided to the text boxex, click submit button and see the main page",
+        "name": "VES Subscriber Generation With Services",
         "description": "",
-        "id": "as-a-user--i-should-be-able-to-login-with-the-provided-credentials.;user-should-be-able-to-enter-the-credentials-provided-to-the-text-boxex--click-submit-button-and-see-the-main-page",
+        "id": "generate-test-data-to-be-used;ves-subscriber-generation-with-services",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 7538000000,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element \u003cspan data-amount\u003d\"\"\u003e...\u003c/span\u003e is not clickable at point (794, 887). Other element would receive the click: \u003cdiv id\u003d\"overlay\"\u003e\u003c/div\u003e\n  (Session info: chrome\u003d87.0.4280.141)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u00271120-CNFWZ53\u0027, ip: \u0027192.168.1.5\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_271\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\\Users\\salturk\\AppData\\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:56678}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 098e2125a7b51bd858a4b2d025acb638\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\r\n\tat sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\r\n\tat com.sun.proxy.$Proxy18.click(Unknown Source)\r\n\tat com.metronet.mis.pages.ves.ServicesPage.chooseServices(ServicesPage.java:83)\r\n\tat com.metronet.mis.step_definitions.TestDataGenerationStepDefinitions.VESSubGenerationWithServices(TestDataGenerationStepDefinitions.java:61)\r\n\tat ✽.Script(file:///C:/Users/salturk/IdeaProjects/AutomationFramework/src/test/resources/features/TestDataGeneration.feature:4)\r\n",
+              "duration": 781063000000,
+              "status": "failed"
             },
             "line": 4,
-            "name": "user is on login page",
+            "name": "Script",
             "match": {
-              "location": "com.metronet.mis.step_definitions.LoginPageStepDefinitions.userIsOnLoginPage()"
+              "location": "com.metronet.mis.step_definitions.TestDataGenerationStepDefinitions.VESSubGenerationWithServices()"
             },
             "keyword": "Given "
-          },
+          }
+        ],
+        "tags": [
           {
-            "result": {
-              "duration": 35000000,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "user enters username to username text box",
-            "match": {
-              "location": "com.metronet.mis.step_definitions.LoginPageStepDefinitions.userEntersUsernameToUsernameTextBox()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 42000000,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "user enters password to password text box",
-            "match": {
-              "location": "com.metronet.mis.step_definitions.LoginPageStepDefinitions.userEntersPasswordToPasswordTextBox()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 1366000000,
-              "status": "passed"
-            },
-            "line": 7,
-            "name": "user clicks on submit button",
-            "match": {
-              "location": "com.metronet.mis.step_definitions.LoginPageStepDefinitions.userClicksOnSubmitButton()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 19000000,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "user should be able to see \"View / Edit Subscriber (v1.124)\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"View / Edit Subscriber (v1.124)\"",
-                  "offset": 27
-                }
-              ],
-              "location": "com.metronet.mis.step_definitions.LoginPageStepDefinitions.userShouldBeAbleToSee(java.lang.String)"
-            },
-            "keyword": "Then "
+            "name": "@testdata"
           }
         ]
       }
     ],
-    "name": "As a user, I should be able to login with the provided credentials.",
+    "name": "Generate test data to be used",
     "description": "",
-    "id": "as-a-user--i-should-be-able-to-login-with-the-provided-credentials.",
+    "id": "generate-test-data-to-be-used",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/LoginPage.feature",
+    "uri": "file:src/test/resources/features/TestDataGeneration.feature",
     "tags": []
   }
 ]

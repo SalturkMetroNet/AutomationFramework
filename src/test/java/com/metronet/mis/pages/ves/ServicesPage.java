@@ -5,6 +5,7 @@ import com.metronet.mis.utilities.BrowserUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ServicesPage extends BasePage
 {
@@ -67,23 +68,33 @@ public class ServicesPage extends BasePage
 	@FindBy (xpath = "(//button[.='Submit'])[4]")
 	public WebElement submitServicesButton;
 
+	@FindBy (id = "overlay")
+	public WebElement loadingOverlay;
+
 	public void chooseServices()
 	{
+		wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
 		resetAllServices.click();
 		BrowserUtils.impWait(30);
+		wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
 		biptvCheckBox.click();
 		BrowserUtils.impWait(30);
-		BrowserUtils.waitFor(5);
+		wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
 		dvrCheckBox.click();
 		BrowserUtils.impWait(30);
+		wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
 		internetTitle.click();
 		BrowserUtils.impWait(30);
+		wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
 		internet100mCheckBox.click();
 		BrowserUtils.impWait(30);
-		BrowserUtils.waitFor(5);
+		wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
+		wait.until(ExpectedConditions.visibilityOf(wholeHomePopUpNoButton));
 		wholeHomePopUpNoButton.click();
+		wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
 		BrowserUtils.impWait(30);
 		submitServicesButton.click();
+		wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
 		BrowserUtils.impWait(30);
 	}
 

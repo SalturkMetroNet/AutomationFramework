@@ -1,20 +1,15 @@
 package com.metronet.mis.pages.ves;
 
 import com.metronet.mis.pages.BasePage;
-import com.metronet.mis.utilities.Driver;
-import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
+import com.metronet.mis.pojos.Subscriber;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NewPage extends BasePage
 {
-	private final static Logger logger = Logger.getLogger(LoginPage.class);
-	private final Wait<WebDriver> webDriverWait = new WebDriverWait(Driver.getDriver(), 5, 1000).withMessage("Warning was not found");
+
 
 	@FindBy(linkText = "residential")
 	public WebElement residentialCheckBox;
@@ -52,26 +47,27 @@ public class NewPage extends BasePage
 	@FindBy(xpath = "//button[@data-submit='createSubscriber']")
 	public WebElement submitButton;
 
-	public void fillForm(String fName, String lName, String dateOfBirth, String serviceAddress, String contactEmail, String contactMobilePhone)
+	public void fillForm(Subscriber subscriber)
 	{
-		firstNameTextBox.sendKeys(fName);
-		lastNameTextBox.sendKeys(lName);
-		dobTextBox.sendKeys(dateOfBirth);
-		serviceAddressTextBox.sendKeys(serviceAddress);
-		webDriverWait.until(ExpectedConditions.visibilityOf(noServicesFoundWarning));
+		firstNameTextBox.sendKeys(subscriber.getFirstName());
+		lastNameTextBox.sendKeys(subscriber.getLastName());
+		dobTextBox.sendKeys(subscriber.getDateOfBirth());
+		serviceAddressTextBox.sendKeys(subscriber.getServiceAddress());
+		serviceAddressTextBox.click();
+		wait.until(ExpectedConditions.visibilityOf(noServicesFoundWarning));
 		moreThanOneYearCheckBox.click();
-		contactEmailTextBox.sendKeys(contactEmail);
-		contactMobilePhoneTextBox.sendKeys(contactMobilePhone);
+		contactEmailTextBox.sendKeys(subscriber.getContactEmail());
+		contactMobilePhoneTextBox.sendKeys(subscriber.getContactPhone());
 		Select select = new Select(contactedDropDown);
 		select.selectByIndex(0);
 		submitButton.click();
 		logger.info("Filled form with:\n"
-				+ "First Name: " + fName + "\n"
-				+ "Last Name: " + lName + "\n"
-				+ "Date Of Birth: " + dateOfBirth + "\n"
-				+ "Service Address: " + serviceAddress + "\n"
-				+ "Contact Email: " + contactEmail + "\n"
-				+ "Contact Phone Number: " + contactMobilePhone
+				+ "First Name: " + subscriber.getFirstName() + "\n"
+				+ "Last Name: " + subscriber.getLastName() + "\n"
+				+ "Date Of Birth: " + subscriber.getDateOfBirth() + "\n"
+				+ "Service Address: " +  subscriber.getServiceAddress() + "\n"
+				+ "Contact Email: " + subscriber.getContactEmail() + "\n"
+				+ "Contact Phone Number: " + subscriber.getContactPhone()
 		);
 	}
 

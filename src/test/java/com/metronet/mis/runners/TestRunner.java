@@ -8,10 +8,17 @@ import org.junit.runner.RunWith;
 		(
 				plugin =
 						{
-								"json:target/cucumber.json"
+								"html:target/cucumber-html-report",
+								"json:target/cucumber.json",
+								"pretty:target/cucumber-pretty.txt",
+								"usage:target/cucumber-usage.json",
+								"junit:target/cucumber-pretty.xml"
+
 						},
 				features = "src/test/resources/features",
-				glue = "com/metronet/mis/step_definitions"
+				glue = "com/metronet/mis/step_definitions",
+				dryRun = false,
+				tags = "@testdata"
 		)
 
 @RunWith(Cucumber.class)
