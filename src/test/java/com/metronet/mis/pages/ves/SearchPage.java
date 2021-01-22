@@ -7,8 +7,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class SearchPage extends BasePage
 {
-	private final static Logger logger = Logger.getLogger(LoginPage.class);
+    private final static Logger logger = Logger.getLogger(LoginPage.class);
 
-	@FindBy (linkText = "New")
-	public WebElement newPageButton;
+    @FindBy(linkText = "New")
+    public WebElement newPageButton;
 }

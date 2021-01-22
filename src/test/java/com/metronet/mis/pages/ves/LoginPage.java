@@ -3,30 +3,29 @@ package com.metronet.mis.pages.ves;
 import com.metronet.mis.pages.BasePage;
 import com.metronet.mis.utilities.ConfigurationReader;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage
 {
-	private final static Logger logger = Logger.getLogger(LoginPage.class);
+    private final static Logger logger = Logger.getLogger(LoginPage.class);
 
-	@FindBy(id = "username")
-	public WebElement username;
+    @FindBy(id = "username")
+    public WebElement username;
 
-	@FindBy(id = "password")
-	public WebElement password;
+    @FindBy(id = "password")
+    public WebElement password;
 
-	@FindBy(tagName = "button")
-	public WebElement submitButton;
+    @FindBy(tagName = "button")
+    public WebElement submitButton;
 
-	public void login()
-	{
-		String usernameString = ConfigurationReader.getProperty("username");
-		String passwordString = ConfigurationReader.getProperty("password");
-		username.sendKeys(usernameString);
-		password.sendKeys(passwordString);
-		submitButton.click();
-		logger.info("Login with " + usernameString + " username and " + passwordString + " password");
-	}
+    public void login()
+    {
+        String usernameString = ConfigurationReader.getProperty("username");
+        String passwordString = ConfigurationReader.getProperty("password");
+        username.sendKeys(usernameString);
+        password.sendKeys(passwordString);
+        submitButton.click();
+        logger.info("Login with " + usernameString + " username and " + passwordString + " password");
+    }
 }

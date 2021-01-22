@@ -2,7 +2,6 @@ package com.metronet.mis.pages.ves;
 
 import com.metronet.mis.pages.BasePage;
 import com.metronet.mis.pojos.Subscriber;
-import com.metronet.mis.utilities.TableManipulation;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,10 +24,10 @@ public class OrderSummaryPage extends BasePage
     @FindBy(id = "overlay")
     public WebElement loadingOverlay;
 
-    public void getCustomerInformation(Subscriber subscriber, boolean hasNewPhone, int iterator) throws IOException
+    public Subscriber getCustomerInformation(Subscriber subscriber) throws IOException
     {
-        subscriber.setServiceAddress(customerInformation.get(2).getText());
-        subscriber.setSubId(customerInformation.get(0).getText());
+        subscriber.setServiceAddress(customerInformation.get(2).getText().substring(customerInformation.get(2).getText().indexOf(":")));
+        subscriber.setSubId(customerInformation.get(0).getText().substring(customerInformation.get(0).getText().indexOf(":")));
 
         System.out.println("Subscriber Information:\n"
                 + "Account Number: " + customerInformation.get(0).getText() + "\n"
@@ -45,10 +44,6 @@ public class OrderSummaryPage extends BasePage
                 + "Contact Email: " + customerInformation.get(4).getText() + "\n"
         );
 
-        TableManipulation.writeExcel(subscriber, "src/test/resources/test-data/Open Addresses_Fishers.xlsx", false, iterator);
-
-
-
-
+        return subscriber;
     }
 }

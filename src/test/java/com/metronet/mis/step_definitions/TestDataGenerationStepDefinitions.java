@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestDataGenerationStepDefinitions
@@ -33,6 +34,7 @@ public class TestDataGenerationStepDefinitions
     {
 
         String firstName, lastName, emailAddress, phone, dob, address;
+        List<Subscriber> subscriberList = new ArrayList<>();
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
 
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
@@ -46,7 +48,7 @@ public class TestDataGenerationStepDefinitions
 
         listOfAddress = TableManipulation.readAddressesFromExcelFile("src/test/resources/test-data/Open Addresses_Fishers.xlsx");
 
-        for (int i = 1; i < 10; i++)
+        for (int i = 1; i < 50; i++)
         {
             firstName = faker.name().firstName();
             lastName = faker.name().lastName();
@@ -60,15 +62,19 @@ public class TestDataGenerationStepDefinitions
             BrowserUtils.impWait(30);
             servicesPage.chooseServices();
             BrowserUtils.impWait(30);
-            reviewOrderPage.fillOutReviewOrderInputs("01/22/2021", 1, "01/22/2021", 4, "Automation");
+            reviewOrderPage.fillOutReviewOrderInputs("01/23/2021", 1, "01/23/2021", 4, "Automation");
             BrowserUtils.impWait(500);
-            orderSummaryPage.getCustomerInformation(subscriber, false, i);
+
+
+            subscriberList.add(orderSummaryPage.getCustomerInformation(subscriber));
+
             BrowserUtils.impWait(30);
             wait.until(ExpectedConditions.invisibilityOf(orderSummaryPage.loadingOverlay));
             orderSummaryPage.navigateToNewLink.click();
 
             BrowserUtils.impWait(30);
         }
+        TableManipulation.writeExcel(subscriberList, "src/test/resources/test-data/SubInfo.xlsx");
 
         Driver.getDriver().close();
 

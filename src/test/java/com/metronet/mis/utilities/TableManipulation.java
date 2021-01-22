@@ -2,14 +2,16 @@ package com.metronet.mis.utilities;
 
 import com.metronet.mis.pojos.Address;
 import com.metronet.mis.pojos.Subscriber;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -66,43 +68,41 @@ public class TableManipulation
         return listAddress;
     }
 
-    public static void writeExcel(Subscriber subscriber, String excelFilePath, boolean hasNewPhone, int iterator) throws IOException
+    public static void writeExcel(List<Subscriber> subscriberList, String excelFilePath) throws IOException
     {
-        Workbook workbook = new HSSFWorkbook();
+        Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet();
 
+        int rowCount = 0;
 
-
-        Row row = sheet.createRow(iterator);
-        writeSubscriber(subscriber, row, hasNewPhone);
-
-        try(FileOutputStream outputStream = new FileOutputStream(excelFilePath))
+        for (Subscriber subscriber : subscriberList)
         {
-            workbook.write(outputStream);
+            Row row = sheet.createRow(++rowCount);
+            writeSubscriber(subscriber, row);
         }
+
+        FileOutputStream outputStream = new FileOutputStream(excelFilePath);
+        workbook.write(outputStream);
+        outputStream.close();
+        workbook.close();
     }
 
-    private static void writeSubscriber(Subscriber subscriber, Row row, boolean hasNewPhone)
+    private static void writeSubscriber(Subscriber subscriber, Row row)
     {
-        Cell cell = row.createCell(1);
+        Cell cell = row.createCell(0);
         cell.setCellValue(subscriber.getFirstName());
-        cell = row.createCell(2);
+        cell = row.createCell(1);
         cell.setCellValue(subscriber.getLastName());
-        cell = row.createCell(3);
+        cell = row.createCell(2);
         cell.setCellValue(subscriber.getContactEmail());
-        cell = row.createCell(4);
+        cell = row.createCell(3);
         cell.setCellValue(subscriber.getContactPhone());
-        cell = row.createCell(5);
+        cell = row.createCell(4);
         cell.setCellValue(subscriber.getDateOfBirth());
-        cell = row.createCell(6);
+        cell = row.createCell(5);
         cell.setCellValue(subscriber.getServiceAddress());
-        cell = row.createCell(7);
+        cell = row.createCell(6);
         cell.setCellValue(subscriber.getSubId());
-        if (hasNewPhone)
-        {
-            cell = row.createCell(8);
-            cell.setCellValue(subscriber.getNewPhoneNumber());
-        }
     }
 
     private static Object getCellValue(Cell cell)
