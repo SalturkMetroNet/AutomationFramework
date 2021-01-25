@@ -26,8 +26,8 @@ public class OrderSummaryPage extends BasePage
 
     public Subscriber getCustomerInformation(Subscriber subscriber) throws IOException
     {
-        subscriber.setServiceAddress(customerInformation.get(2).getText().substring(customerInformation.get(2).getText().indexOf(":")));
-        subscriber.setSubId(customerInformation.get(0).getText().substring(customerInformation.get(0).getText().indexOf(":")));
+        subscriber.setServiceAddress(customerInformation.get(2).getText().substring(customerInformation.get(2).getText().indexOf(":"))+1);
+        subscriber.setSubId(customerInformation.get(0).getText().substring(customerInformation.get(0).getText().indexOf(":"))+1);
 
         System.out.println("Subscriber Information:\n"
                 + "Account Number: " + customerInformation.get(0).getText() + "\n"

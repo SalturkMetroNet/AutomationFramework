@@ -2,6 +2,7 @@ package com.metronet.mis.pages.ves;
 
 import com.metronet.mis.pages.BasePage;
 import com.metronet.mis.pojos.Subscriber;
+import com.metronet.mis.utilities.BrowserUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -50,17 +51,39 @@ public class NewPage extends BasePage
     public void fillForm(Subscriber subscriber)
     {
         firstNameTextBox.sendKeys(subscriber.getFirstName());
+        BrowserUtils.impWait(30);
+
         lastNameTextBox.sendKeys(subscriber.getLastName());
+        BrowserUtils.impWait(30);
+
         dobTextBox.sendKeys(subscriber.getDateOfBirth());
+        BrowserUtils.impWait(30);
+
         serviceAddressTextBox.sendKeys(subscriber.getServiceAddress());
+        BrowserUtils.impWait(30);
+
         serviceAddressTextBox.click();
+        BrowserUtils.impWait(30);
+
         wait.until(ExpectedConditions.visibilityOf(noServicesFoundWarning));
+        BrowserUtils.impWait(30);
+
         moreThanOneYearCheckBox.click();
+        BrowserUtils.impWait(30);
+
         contactEmailTextBox.sendKeys(subscriber.getContactEmail());
+        BrowserUtils.impWait(30);
+
         contactMobilePhoneTextBox.sendKeys(subscriber.getContactPhone());
+        BrowserUtils.impWait(30);
+
         Select select = new Select(contactedDropDown);
         select.selectByIndex(0);
+        BrowserUtils.impWait(30);
+
         submitButton.click();
+        BrowserUtils.impWait(30);
+
         logger.info("Filled form with:\n"
                 + "First Name: " + subscriber.getFirstName() + "\n"
                 + "Last Name: " + subscriber.getLastName() + "\n"

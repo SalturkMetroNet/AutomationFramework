@@ -62,7 +62,7 @@ public class ServicesPage extends BasePage
     @FindBy(xpath = "//span[text()='49.95']")
     public WebElement internet100mCheckBox;
 
-    @FindBy(xpath = "//div[@class='askExtender panel form active']//table//button[2]")
+    @FindBy(xpath = "//div[contains(@class, 'askExtender panel form')]//table//button[2]")
     public WebElement wholeHomePopUpNoButton;
 
     @FindBy(xpath = "(//button[.='Submit'])[4]")
@@ -73,6 +73,8 @@ public class ServicesPage extends BasePage
 
     public void chooseServices()
     {
+        wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
+        resetAllServices.click();
         wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
         resetAllServices.click();
         BrowserUtils.impWait(30);
@@ -89,8 +91,15 @@ public class ServicesPage extends BasePage
         internet100mCheckBox.click();
         BrowserUtils.impWait(30);
         wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
-        wait.until(ExpectedConditions.visibilityOf(wholeHomePopUpNoButton));
-        wholeHomePopUpNoButton.click();
+        BrowserUtils.waitFor(1);
+        try
+        {
+            wholeHomePopUpNoButton.click();
+        }
+        finally
+        {
+            logger.info("Pop up button");
+        }
         wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
         BrowserUtils.impWait(30);
         submitServicesButton.click();

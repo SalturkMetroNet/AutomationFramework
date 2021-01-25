@@ -68,23 +68,76 @@ public class TableManipulation
         return listAddress;
     }
 
-    public static void writeExcel(List<Subscriber> subscriberList, String excelFilePath) throws IOException
+    private static Object getCellValue(Cell cell)
     {
-        Workbook workbook = new XSSFWorkbook();
-        Sheet sheet = workbook.createSheet();
+        switch (cell.getCellType())
+        {
+            case STRING:
+                return cell.getStringCellValue();
 
-        int rowCount = 0;
+            case BOOLEAN:
+                return cell.getBooleanCellValue();
+
+            case NUMERIC:
+                return cell.getNumericCellValue();
+        }
+        return null;
+    }
+
+    public static void checkAndWriteExcel(List<Subscriber> subscriberList, String excelFilePath) throws IOException
+    {
+        FileOutputStream fileOutputStream = new FileOutputStream(excelFilePath);
+        Workbook workbook = new XSSFWorkbook();
 
         for (Subscriber subscriber : subscriberList)
         {
-            Row row = sheet.createRow(++rowCount);
-            writeSubscriber(subscriber, row);
+            if (!new File(excelFilePath).exists())
+            {
+                writeExcelNew(subscriber, fileOutputStream, workbook);
+                workbook.write(fileOutputStream);
+            }
+            else
+            {
+                writeExcelExisting(subscriber,fileOutputStream,  workbook);
+                workbook.write(fileOutputStream);
+            }
         }
-
-        FileOutputStream outputStream = new FileOutputStream(excelFilePath);
-        workbook.write(outputStream);
-        outputStream.close();
+        workbook.write(fileOutputStream);
         workbook.close();
+        fileOutputStream.close();
+    }
+
+    public static void writeExcelNew(Subscriber subscriber, FileOutputStream fileOutputStream, Workbook workbook) throws IOException
+    {
+        Sheet sheet = workbook.createSheet("Subs");
+
+        Row row = sheet.createRow(0);
+        Cell cell = row.createCell(0);
+        cell.setCellValue("First Name");
+        cell = row.createCell(1);
+        cell.setCellValue("Last Name");
+        cell = row.createCell(2);
+        cell.setCellValue("Contact Email Address");
+        cell = row.createCell(3);
+        cell.setCellValue("Contact Phone Number");
+        cell = row.createCell(4);
+        cell.setCellValue("Date of Birth");
+        cell = row.createCell(5);
+        cell.setCellValue("Service Address");
+        cell = row.createCell(6);
+        cell.setCellValue("Subscriber ID");
+
+        Row row2 = sheet.createRow(1);
+
+    }
+
+    public static void writeExcelExisting(Subscriber subscriber, FileOutputStream fileOutputStream, Workbook workbook) throws IOException
+    {
+        Sheet sheet = workbook.getSheetAt(1);
+        int rowCount = sheet.getLastRowNum();
+
+        Row row = sheet.createRow(rowCount);
+        writeSubscriber(subscriber, row);
     }
 
     private static void writeSubscriber(Subscriber subscriber, Row row)
@@ -105,19 +158,5 @@ public class TableManipulation
         cell.setCellValue(subscriber.getSubId());
     }
 
-    private static Object getCellValue(Cell cell)
-    {
-        switch (cell.getCellType())
-        {
-            case STRING:
-                return cell.getStringCellValue();
 
-            case BOOLEAN:
-                return cell.getBooleanCellValue();
-
-            case NUMERIC:
-                return cell.getNumericCellValue();
-        }
-        return null;
-    }
 }

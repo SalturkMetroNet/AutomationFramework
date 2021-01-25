@@ -3,8 +3,8 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-01-22T15:20:08.941Z",
-        "line": 3,
+        "start_timestamp": "2021-01-25T14:58:43.208Z",
+        "line": 4,
         "name": "VES Subscriber Generation With Services",
         "description": "",
         "id": "generate-test-data-to-be-used;ves-subscriber-generation-with-services",
@@ -13,10 +13,11 @@
         "steps": [
           {
             "result": {
-              "duration": 900130000000,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element \u003cbutton data-submit\u003d\"\" class\u003d\"button ui-button ui-corner-all ui-widget\"\u003e...\u003c/button\u003e is not clickable at point (698, 206). Other element would receive the click: \u003ctd\u003e...\u003c/td\u003e\n  (Session info: headless chrome\u003d87.0.4280.141)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u00271120-CNFWZ53\u0027, ip: \u0027192.168.1.5\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_271\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\\Users\\salturk\\AppData\\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:59105}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 7cb4fe812fbeb56bd6b1b49428daff3b\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\r\n\tat sun.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\r\n\tat com.sun.proxy.$Proxy19.click(Unknown Source)\r\n\tat com.metronet.mis.pages.ves.ServicesPage.chooseServices(ServicesPage.java:97)\r\n\tat com.metronet.mis.step_definitions.TestDataGenerationStepDefinitions.VESSubGenerationWithServices(TestDataGenerationStepDefinitions.java:69)\r\n\tat ✽.Script(file:///C:/Users/salturk/IdeaProjects/AutomationFramework/src/test/resources/features/TestDataGeneration.feature:5)\r\n",
+              "duration": 203299000000,
+              "status": "failed"
             },
-            "line": 4,
+            "line": 5,
             "name": "Script",
             "match": {
               "location": "com.metronet.mis.step_definitions.TestDataGenerationStepDefinitions.VESSubGenerationWithServices()"

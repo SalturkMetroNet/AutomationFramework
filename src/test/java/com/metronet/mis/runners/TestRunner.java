@@ -17,18 +17,7 @@ import org.junit.runner.RunWith;
         toPDF = true,
         outputFolder = "target/81",
         retryCount = 3)
-@CucumberOptions(
-        features = {"src/test/resources/features"},
-        tags = "@testdata",
-        glue = "com/metronet/mis/step_definitions",
-        plugin = {
-                "html:target/81/cucumber-html.html",
-                "json:target/81/cucumber.json",
-                "pretty:target/81/cucumber-pretty.txt",
-                "usage:target/81/cucumber-usage.json",
-                "junit:target/81/cucumber-results.xml"
-        })
-/*
+
 @CucumberOptions
 		(
 				plugin =
@@ -45,9 +34,6 @@ import org.junit.runner.RunWith;
 				dryRun = false,
 				tags = "@testdata"
 		)
-
-
-*/
 @RunWith(Cucumber.class)
 public class TestRunner
 {
