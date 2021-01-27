@@ -2,7 +2,7 @@ package com.metronet.mis.pages.ves;
 
 import com.metronet.mis.pages.BasePage;
 import com.metronet.mis.pojos.Subscriber;
-import com.metronet.mis.utilities.BrowserUtils;
+import com.metronet.mis.utilities.ui.BrowserUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,8 +10,6 @@ import org.openqa.selenium.support.ui.Select;
 
 public class NewPage extends BasePage
 {
-
-
     @FindBy(linkText = "residential")
     public WebElement residentialCheckBox;
 

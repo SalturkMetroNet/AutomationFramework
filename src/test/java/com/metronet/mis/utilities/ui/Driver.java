@@ -1,5 +1,6 @@
-package com.metronet.mis.utilities;
+package com.metronet.mis.utilities.ui;
 
+import com.metronet.mis.utilities.common.ConfigurationReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;

@@ -1,7 +1,7 @@
 package com.metronet.mis.pages.ves;
 
 import com.metronet.mis.pages.BasePage;
-import com.metronet.mis.utilities.BrowserUtils;
+import com.metronet.mis.utilities.ui.BrowserUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;

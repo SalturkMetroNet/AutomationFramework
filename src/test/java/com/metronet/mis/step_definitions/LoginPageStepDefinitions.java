@@ -1,8 +1,8 @@
 package com.metronet.mis.step_definitions;
 
 import com.metronet.mis.pages.ves.LoginPage;
-import com.metronet.mis.utilities.ConfigurationReader;
-import com.metronet.mis.utilities.Driver;
+import com.metronet.mis.utilities.common.ConfigurationReader;
+import com.metronet.mis.utilities.ui.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

@@ -1,4 +1,4 @@
-package com.metronet.mis.utilities;
+package com.metronet.mis.utilities.common;
 
 import java.io.FileInputStream;
 import java.util.Properties;

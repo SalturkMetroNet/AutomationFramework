@@ -1,7 +1,7 @@
 package com.metronet.mis.step_definitions;
 
-import com.metronet.mis.utilities.ConfigurationReader;
-import com.metronet.mis.utilities.Driver;
+import com.metronet.mis.utilities.common.ConfigurationReader;
+import com.metronet.mis.utilities.ui.Driver;
 import io.cucumber.java.Scenario;
 import org.apache.log4j.Logger;
 import org.junit.After;
