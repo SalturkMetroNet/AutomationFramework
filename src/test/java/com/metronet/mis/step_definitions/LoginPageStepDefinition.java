@@ -1,6 +1,6 @@
 package com.metronet.mis.step_definitions;
 
-import com.metronet.mis.pages.ves.LoginPage;
+import com.metronet.mis.pages.ves.LoginPageVES;
 import com.metronet.mis.utilities.common.ConfigurationReader;
 import com.metronet.mis.utilities.ui.Driver;
 import io.cucumber.java.en.And;
@@ -9,9 +9,9 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class LoginPageStepDefinitions
+public class LoginPageStepDefinition
 {
-    LoginPage loginPage = new LoginPage();
+    LoginPageVES loginPage = new LoginPageVES();
 
     @When("user is on login page")
     public void userIsOnLoginPage()

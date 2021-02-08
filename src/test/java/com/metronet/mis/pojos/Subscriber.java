@@ -1,5 +1,8 @@
 package com.metronet.mis.pojos;
 
+/**
+ * Subscriber class to contain information of subscribers
+ */
 public class Subscriber
 {
     private String firstName;

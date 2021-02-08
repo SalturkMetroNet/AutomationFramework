@@ -3,6 +3,9 @@ package com.metronet.mis.utilities.common;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+/**
+ * A Class containing necessary methods to read from configuration.properties
+ */
 public class ConfigurationReader
 {
     private static Properties configFile;

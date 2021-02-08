@@ -2,6 +2,9 @@ package com.metronet.mis.pojos;
 
 import java.util.List;
 
+/**
+ * Parameter class to contain parameters
+ */
 public class Parameter
 {
     String tv;

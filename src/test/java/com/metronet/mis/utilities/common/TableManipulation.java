@@ -1,9 +1,8 @@
-package com.metronet.mis.utilities.db;
+package com.metronet.mis.utilities.common;
 
 import com.metronet.mis.pojos.Address;
 import com.metronet.mis.pojos.Parameter;
 import com.metronet.mis.pojos.Subscriber;
-import com.metronet.mis.utilities.common.ConfigurationReader;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;

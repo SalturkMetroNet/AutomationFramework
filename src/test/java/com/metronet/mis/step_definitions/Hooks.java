@@ -29,7 +29,7 @@ public class Hooks
         {
             logger.info("Taking a screenshot");
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", scenario.getName());
+            scenario.embed(screenshot, "image/png", scenario.getName());
         }
         Driver.closeDriver();
         logger.info("::: Ending Automation :::");

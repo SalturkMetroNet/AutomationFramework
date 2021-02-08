@@ -1,5 +1,8 @@
 package com.metronet.mis.pojos;
 
+/**
+ * Address class to contain the information
+ */
 public class Address
 {
     private String city;

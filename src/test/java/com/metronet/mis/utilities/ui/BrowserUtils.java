@@ -53,7 +53,8 @@ public class BrowserUtils
         File file = new File(path);
         file.mkdirs();
         Date date = new Date();
-        path += date + "screenshot.jpeg";
+        path += "screenshot.jpeg";
+        //path += date + "screenshot.jpeg";
         try (OutputStream outputStream = new FileOutputStream(path))
         {
             TakesScreenshot takesScreenshot = (TakesScreenshot) Driver.getDriver();

@@ -1,170 +1,329 @@
 package com.metronet.mis.pages.ves;
 
-import com.metronet.mis.pages.BasePage;
 import com.metronet.mis.pojos.Parameter;
-import com.metronet.mis.utilities.ui.BrowserUtils;
 import com.metronet.mis.utilities.common.Customs;
-import com.metronet.mis.utilities.ui.Driver;
-import org.apache.log4j.Logger;
-import org.openqa.selenium.TimeoutException;
+import com.metronet.mis.utilities.ui.BrowserUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ServicesPage extends BasePage
+public class ServicesPageVES extends VESBasePage
 {
-    private final static Logger logger = Logger.getLogger(ServicesPage.class);
-
+    /**
+     * Reset Servcies button
+     */
     @FindBy(xpath = "//button[@type='reset']")
     public WebElement resetAllServicesButton;
 
+    /**
+     * Cancell All Button
+     */
     @FindBy(xpath = "//button[text()='Cancel All']")
     public WebElement cancelAllServicesButton;
 
+    /**
+     * submitServicesButton
+     */
     @FindBy(xpath = "(//button[.='Submit'])[4]")
     public WebElement submitServicesButton;
 
-
+    /**
+     * Basic IPTV checkbox
+     */
     @FindBy(xpath = "//span[@class='leaderLabel']")
     public WebElement biptvCheckBox;
 
+    /**
+     * Standard IPTV checkbox
+     */
     @FindBy(xpath = "(//span[@class='leaderLabel'])[2]")
     public WebElement siptvCheckBox;
 
+    /**
+     * Preffered IPTV checkbox
+     */
     @FindBy(xpath = "(//span[@class='leaderLabel'])[3]")
     public WebElement piptvCheckBox;
 
-
+    /**
+     * Add STB link
+     */
     @FindBy(xpath = "//span[@data-platform='mediaroom']")
     public WebElement addStbLink;
 
+    /**
+     * STB Rate Plan Menu dropdown
+     */
     @FindBy(id = "ratePlans")
     public WebElement stbMenuRatePlanDropdown;
 
+    /**
+     * STB Rate Plan Menu Submit button
+     */
     @FindBy(xpath = "//button[text()='Apply']")
     public WebElement stbMenuRateSubmitButton;
 
+    /**
+     * STB Power Cord checkbox
+     */
     @FindBy(xpath = "//label[@class='indent']")
     public WebElement stbPCCheckBox;
 
+    /**
+     * STB Remote Control checkbox
+     */
     @FindBy(xpath = "(//label[@class='indent'])[2]")
     public WebElement stbRCCheckBox;
 
+    /**
+     * STB Unreturned checkbox
+     */
     @FindBy(xpath = "(//label[@class='indent'])[4]")
     public WebElement stbUCheckBox;
 
-
+    /**
+     * DVR checkbox
+     */
     @FindBy(xpath = "//span[text()='16.95']")
     public WebElement dvrCheckBox;
 
+    /**
+     * DVR Power Cord checkbox
+     */
     @FindBy(xpath = "(//span[text()='5.00'])[2]")
     public WebElement dvrPCCheckBox;
 
+    /**
+     * DVR Remote Control checkbox
+     */
     @FindBy(xpath = "(//span[.='Replacement Remote Control'])[3]")
     public WebElement dvrRCCheckBox;
 
+    /**
+     * DVR Unreturned checkbox
+     */
     @FindBy(xpath = "//span[text()='Unreturned Digital Set Top Box with DVR & HD']")
     public WebElement dvrUCheckBox;
 
-
+    /**
+     * HD Elite checkbox
+     */
     @FindBy(xpath = "(//span[text()='1.22'])[1]")
     public WebElement hdeliteCheckBox;
 
+    /**
+     * Sports Tier checkbox
+     */
     @FindBy(xpath = "(//span[text()='4.31'])[1]")
     public WebElement sportstierCheckBox;
 
+    /**
+     * Starz checkbox
+     */
     @FindBy(xpath = "(//span[text()='7.18'])[1]")
     public WebElement starzCheckBox;
 
+    /**
+     * Cinemax checkbox
+     */
     @FindBy(xpath = "(//span[text()='8.47'])[1]")
     public WebElement cinemaxCheckBox;
 
+    /**
+     * Show Time checkbox
+     */
     @FindBy(xpath = "(//span[text()='8.50'])[1]")
     public WebElement showtimeCheckBox;
 
+    /**
+     * HBO checkbox
+     */
     @FindBy(xpath = "(//span[text()='15.00'])[3]")
     public WebElement hboCheckBox;
 
+    /**
+     * Internet title
+     */
     @FindBy(xpath = "//a[@title='Internet']")
     public WebElement internetTitle;
 
+    /**
+     * 2M/2M checkbox
+     */
     @FindBy(xpath = "//span[text()='19.95']")
     public WebElement internet2mCheckBox;
 
+    /**
+     * 100M/100M checkbox
+     */
     @FindBy(xpath = "//span[text()='49.95']")
     public WebElement internet100mCheckBox;
 
+    /**
+     * 200M/200M checkbox
+     */
     @FindBy(xpath = "//span[text()='59.95']")
     public WebElement internet200mCheckBox;
 
+    /**
+     * 500M/500M checkbox
+     */
     @FindBy(xpath = "//span[text()='69.95']")
     public WebElement internet500mCheckBox;
 
+    /**
+     * 1.0 Gigabit/1.0 Gigabit checkbox
+     */
     @FindBy(xpath = "//span[text()='89.95']")
     public WebElement internet1gbCheckBox;
 
+    /**
+     * Purchased Router checkbox
+     */
     @FindBy(xpath = "//span[text()='Purchased Router']")
     public WebElement purchasedRouterCheckBox;
 
+    /**
+     * Unreturned Router checkbox
+     */
     @FindBy(xpath = "//span[text()='Unreturned Router']")
     public WebElement unreturnedRouterCheckBox;
 
+    /**
+     * Tech Home Protect checkbox
+     */
     @FindBy(xpath = "//span[text()='Tech Home Protect']")
     public WebElement techHomeProtectCheckBox;
 
+    /**
+     * Tech Home Protect | Mobile Protect Addon checkbox
+     */
     @FindBy(xpath = "//span[text()='Mobile Protect Add-On']")
     public WebElement thp_MobileProtectAddonCheckBox;
 
+    /**
+     * Tech Home Protect | Desktop Protect Addon checkbox
+     */
     @FindBy(xpath = "//span[text()='Desktop Protect Add-On']")
     public WebElement thp_DesktopProtectAddonCheckBox;
 
+    /**
+     * Tech Home Support checkbox
+     */
     @FindBy(xpath = "//span[text()='Tech Home Support']")
     public WebElement techHomeSupportCheckBox;
 
+    /**
+     * Tech Home Support | Mobile Protect Addon checkbox
+     */
     @FindBy(xpath = "(//span[text()='Mobile Protect Add-On'])[3]")
     public WebElement ths_MobileProtectAddonCheckBox;
 
+    /**
+     * Tech Home Support | Desktop Protect Addon checkbox
+     */
     @FindBy(xpath = "(//span[text()='Desktop Protect Add-On'])[3]")
     public WebElement ths_DesktopProtectAddonCheckBox;
 
+    /**
+     * Wholehome Pop-up No button
+     */
     @FindBy(xpath = "//div[contains(@class, 'askExtender panel form')]//table//button[2]")
     public WebElement wholeHomePopUpNoButton;
 
+    /**
+     * Wholehome Pop-up
+     */
+    @FindBy(xpath = "//div[contains(@class, 'askExtender panel form')]")
+    public WebElement wholeHomePopUp;
+
+    /**
+     * Add Wholehome Wifi link
+     */
     @FindBy(xpath = "//span[@title='Add WholeHome Wifi']")
     public WebElement addWholehomeWifiLink;
 
+    /**
+     * Speed Boost checkbox
+     */
     @FindBy(xpath = "//span[text()='Speed Boost']")
     public WebElement speedBoostCheckBox;
 
+    /**
+     * Phone title
+     */
     @FindBy(linkText = "Phone")
     public WebElement phoneTitle;
 
+    /**
+     * Fiber Phone checkbox
+     */
     @FindBy(xpath = "//span[text()='Fiber Phone 1000']")
     public WebElement fiberPhoneCheckBox;
 
+    /**
+     * Battery Backup Pop-up
+     */
+    @FindBy(xpath = "//div[contains(@class,'askBatteryBackup panel')]")
+    public WebElement batteryBackupPopUp;
+
+    /**
+     * Battery Backup Pop-up No button
+     */
     @FindBy(xpath = "(//div[contains(@class,'askBatteryBackup panel')]//button)[2]")
     public WebElement batteryBackupPopUpNoButton;
 
+    /**
+     * Battery Backup Pop-up Yes button
+     */
     @FindBy(xpath = "//div[contains(@class,'askBatteryBackup panel')]//button[1]") //(//button[.='Yes'])[4]
     public WebElement batteryBackupPopUpYesButton;
 
+    /**
+     * Rate Plan Pop-up dropdown
+     */
     @FindBy(id = "ratePlans")
     public WebElement ratePlanPopUpDropdown;
 
+    /**
+     * Rate Plan Pop-up Apply button
+     */
     @FindBy(xpath = "(//button[contains(@class,'submit button')])[2]")
     public WebElement ratePlanPopUpApplyButton;
 
+    /**
+     * Line Type dropdown
+     */
     @FindBy(xpath = "//select[@data-id='lineType-activeAddrNew1']")
     public WebElement lineTypeDropdown;
 
+    /**
+     * Loading overlay
+     */
     @FindBy(id = "overlay")
     public WebElement loadingOverlay;
 
+    /**
+     * Pop-up overlay
+     */
+    @FindBy(id = "panelModalOverlay")
+    public WebElement popUpOverlay;
+
+    /**
+     * Static IP Address checkbox
+     */
     @FindBy(xpath = "//span[text()='10.00']")
     public WebElement sipAddressCheckBox;
 
+    /**
+     * A custom method to follow the process of choosing the services for subscribers WITHOUT parameters.
+     * The chosen services are: Basic IPTV, DVR, 100M Internet
+     *
+     * @author salturk
+     * @see VESBasePage
+     * @see WebElement
+     */
     public void chooseServices()
     {
         wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
@@ -201,6 +360,14 @@ public class ServicesPage extends BasePage
         BrowserUtils.impWait(30);
     }
 
+    /**
+     * A custom method to follow the process of choosing services for subscribers WITH parameters. The method read the
+     * parameters from a Parameters object and goes through a set of conditional statements.
+     * @author salturk
+     * @see Parameter
+     * @see VESBasePage
+     * @see WebElement
+     */
     public void chooseServicesWithParameters(Parameter parameter)
     {
         wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
@@ -382,18 +549,17 @@ public class ServicesPage extends BasePage
             default:
                 logger.error("Internet -> Speed parameter error" + parameter.getSpeed());
         }
-
-
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
         try
         {
-            wait.until(ExpectedConditions.visibilityOf(wholeHomePopUpNoButton));
+            wait.until(ExpectedConditions.visibilityOf(popUpOverlay));
+            BrowserUtils.wait(3);
             wholeHomePopUpNoButton.click();
         }
-        catch (TimeoutException e)
+        catch (Exception e)
         {
-            logger.info("No wholehome wifi pop up");
+            logger.info("hmmmm");
         }
+
 
         if (parameter.getProuter().equals("r"))
         {
@@ -499,36 +665,44 @@ public class ServicesPage extends BasePage
         {
             parameter.setPhone(Customs.randomZeroOne());
         }
+        BrowserUtils.impWait(4);
+        if (wholeHomePopUpNoButton.isDisplayed())
+        {
+            wholeHomePopUpNoButton.click();
+        }
 
         if (parameter.getPhone().equals("1"))
         {
             phoneTitle.click();
             fiberPhoneCheckBox.click();
-
+            BrowserUtils.impWait(20);
             if (parameter.getBatteryBackup().equals("r"))
             {
                 parameter.setBatteryBackup(Customs.randomZeroOne());
             }
-
-            wait.until(ExpectedConditions.visibilityOf(batteryBackupPopUpNoButton));
-
-            switch (parameter.getBatteryBackup())
+            BrowserUtils.impWait(40);
+            BrowserUtils.wait(5);
+            try
             {
-                case "1":
+                if (parameter.getBatteryBackup().equals("1"))
+                {
                     batteryBackupPopUpYesButton.click();
-                    break;
-                case "0":
-                    batteryBackupPopUpNoButton.click();
-                    break;
+                }
+                else batteryBackupPopUpNoButton.click();
+            }
+            catch (Exception e)
+            {
+                logger.info("Too many mind. No mind");
             }
 
             Select select = new Select(lineTypeDropdown);
             select.selectByIndex(1);
         }
-        wait.until(ExpectedConditions.visibilityOf(submitServicesButton));
-        wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
 
         //BrowserUtils.takeAScreenshotAndSave("Test Data Generation");
+
+        wait.until(ExpectedConditions.visibilityOf(submitServicesButton));
+        wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
         submitServicesButton.click();
         logger.info(parameter.toString());
     }

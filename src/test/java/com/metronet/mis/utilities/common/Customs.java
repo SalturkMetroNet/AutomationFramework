@@ -1,5 +1,8 @@
 package com.metronet.mis.utilities.common;
 
+/**
+ * Custom methods to help with random processes
+ */
 public class Customs
 {
     public static String randomZeroOne()
