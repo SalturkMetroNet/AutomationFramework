@@ -372,7 +372,12 @@ public class ServicesPageVES extends VESBasePage
     {
         wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
         resetAllServicesButton.click();
-        logger.info(parameter.toString());
+
+        if(parameter.getTv().equals("r"))
+        {
+            parameter.setTv(Customs.randomZeroOne());
+        }
+
         if (parameter.getTv().equals("1"))
         {
             BrowserUtils.impWait(30);
@@ -381,7 +386,7 @@ public class ServicesPageVES extends VESBasePage
             {
                 parameter.setIptv(Customs.randomZeroOne());
             }
-
+            wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
             switch (parameter.getIptv())
             {
                 case "1":
@@ -401,13 +406,13 @@ public class ServicesPageVES extends VESBasePage
             {
                 parameter.setStb(Customs.randomZeroOne());
             }
-
+            wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
             switch (parameter.getStb())
             {
                 case "1":
                     addStbLink.click();
                     Select select = new Select(stbMenuRatePlanDropdown);
-                    select.selectByIndex(0);
+                    select.selectByVisibleText("Wireless Set Top Box $7.95 - $7.95");
                     stbMenuRateSubmitButton.click();
 
                     if (parameter.getStb_pc().equals("r"))
@@ -703,7 +708,8 @@ public class ServicesPageVES extends VESBasePage
 
         wait.until(ExpectedConditions.visibilityOf(submitServicesButton));
         wait.until(ExpectedConditions.invisibilityOf(loadingOverlay));
+        BrowserUtils.wait(2);
         submitServicesButton.click();
-        logger.info(parameter.toString());
+        BrowserUtils.impWait(20);
     }
 }

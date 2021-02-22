@@ -1,6 +1,7 @@
 package com.metronet.mis.pages.ves;
 
 import com.metronet.mis.utilities.common.ConfigurationReader;
+import com.metronet.mis.utilities.misc.Colors;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -12,7 +13,7 @@ import org.openqa.selenium.support.FindBy;
  *
  * @author salturk
  */
-public class LoginPageVES extends VESBasePage
+public class LoginPageVES extends VESBasePage implements Colors
 {
     /**
      * Username text field
@@ -47,6 +48,5 @@ public class LoginPageVES extends VESBasePage
         username.sendKeys(usernameString);
         password.sendKeys(passwordString);
         submitButton.click();
-        logger.info("Login with " + usernameString + " username and " + passwordString + " password");
     }
 }

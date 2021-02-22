@@ -1,6 +1,7 @@
 package com.metronet.mis.pojos;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Parameter class to contain parameters
@@ -73,10 +74,43 @@ public class Parameter
         this.batteryBackup = parameters.get(29);
     }
 
+    public Parameter(Map<String, String> parameters)
+    {
+        this.tv = parameters.get("TV");
+        this.iptv = parameters.get("IPTV");
+        this.dvr = parameters.get("DVR");
+        this.dvr_pc = parameters.get("Replacement Power Cord");
+        this.dvr_rc = parameters.get("Replacement Remote Control DVR");
+        this.dvr_return = parameters.get("Unreturned DVR");
+        this.stb = parameters.get("STB");
+        this.stb_pc = parameters.get("Replacement Power Cord STB");
+        this.stb_rc = parameters.get("Replacement Remote Control STB");
+        this.stb_return = parameters.get("Unreturned STB");
+        this.hdelite = parameters.get("HDElite");
+        this.sportstier = parameters.get("Sports Tier");
+        this.starz = parameters.get("Starz");
+        this.cinemax = parameters.get("Cinemax");
+        this.showtime = parameters.get("Showtime");
+        this.hbo = parameters.get("HBO");
+        this.speed = parameters.get("Speed");
+        this.router = parameters.get("Router");
+        this.prouter = parameters.get("Purchased Router");
+        this.urouter = parameters.get("Unreturned Router");
+        this.sipaddress = parameters.get("Static IP Address");
+        this.thp = parameters.get("Tech Home Protect");
+        this.thp_mob = parameters.get("Mobile Protect Add-On THP");
+        this.thp_desk = parameters.get("Desktop Protect Add-On THP");
+        this.ths = parameters.get("Tech Home Support");
+        this.ths_mob = parameters.get("Mobile Protect Add-On THS");
+        this.ths_desk = parameters.get("Desktop Protect Add-On THS");
+        this.wholeHome = parameters.get("Add WholeHomeWifi");
+        this.phone = parameters.get("Phone");
+        this.batteryBackup = parameters.get("Battery Backup");
+    }
 
     public String getTv()
     {
-        return tv;
+        return this.tv;
     }
 
     public void setTv(String tv)
@@ -86,7 +120,7 @@ public class Parameter
 
     public String getIptv()
     {
-        return iptv;
+        return this.iptv;
     }
 
     public void setIptv(String iptv)
@@ -96,7 +130,7 @@ public class Parameter
 
     public String getDvr()
     {
-        return dvr;
+        return this.dvr;
     }
 
     public void setDvr(String dvr)
@@ -106,7 +140,7 @@ public class Parameter
 
     public String getDvr_pc()
     {
-        return dvr_pc;
+        return this.dvr_pc;
     }
 
     public void setDvr_pc(String dvr_pc)
@@ -116,7 +150,7 @@ public class Parameter
 
     public String getDvr_rc()
     {
-        return dvr_rc;
+        return this.dvr_rc;
     }
 
     public void setDvr_rc(String dvr_rc)
@@ -126,7 +160,7 @@ public class Parameter
 
     public String getDvr_return()
     {
-        return dvr_return;
+        return this.dvr_return;
     }
 
     public void setDvr_return(String dvr_return)
@@ -136,7 +170,7 @@ public class Parameter
 
     public String getStb()
     {
-        return stb;
+        return this.stb;
     }
 
     public void setStb(String stb)
@@ -146,7 +180,7 @@ public class Parameter
 
     public String getStb_pc()
     {
-        return stb_pc;
+        return this.stb_pc;
     }
 
     public void setStb_pc(String stb_pc)
@@ -156,7 +190,7 @@ public class Parameter
 
     public String getStb_rc()
     {
-        return stb_rc;
+        return this.stb_rc;
     }
 
     public void setStb_rc(String stb_rc)
@@ -166,7 +200,7 @@ public class Parameter
 
     public String getStb_return()
     {
-        return stb_return;
+        return this.stb_return;
     }
 
     public void setStb_return(String stb_return)
@@ -176,7 +210,7 @@ public class Parameter
 
     public String getHdelite()
     {
-        return hdelite;
+        return this.hdelite;
     }
 
     public void setHdelite(String hdelite)
@@ -186,7 +220,7 @@ public class Parameter
 
     public String getSportstier()
     {
-        return sportstier;
+        return this.sportstier;
     }
 
     public void setSportstier(String sportstier)
@@ -196,7 +230,7 @@ public class Parameter
 
     public String getStarz()
     {
-        return starz;
+        return this.starz;
     }
 
     public void setStarz(String starz)
@@ -206,7 +240,7 @@ public class Parameter
 
     public String getCinemax()
     {
-        return cinemax;
+        return this.cinemax;
     }
 
     public void setCinemax(String cinemax)
@@ -216,7 +250,7 @@ public class Parameter
 
     public String getShowtime()
     {
-        return showtime;
+        return this.showtime;
     }
 
     public void setShowtime(String showtime)
@@ -226,7 +260,7 @@ public class Parameter
 
     public String getHbo()
     {
-        return hbo;
+        return this.hbo;
     }
 
     public void setHbo(String hbo)
@@ -236,7 +270,7 @@ public class Parameter
 
     public String getSpeed()
     {
-        return speed;
+        return this.speed;
     }
 
     public void setSpeed(String speed)
@@ -246,7 +280,7 @@ public class Parameter
 
     public String getRouter()
     {
-        return router;
+        return this.router;
     }
 
     public void setRouter(String router)
@@ -256,7 +290,7 @@ public class Parameter
 
     public String getProuter()
     {
-        return prouter;
+        return this.prouter;
     }
 
     public void setProuter(String prouter)
@@ -266,7 +300,7 @@ public class Parameter
 
     public String getUrouter()
     {
-        return urouter;
+        return this.urouter;
     }
 
     public void setUrouter(String urouter)
@@ -276,7 +310,7 @@ public class Parameter
 
     public String getSipaddress()
     {
-        return sipaddress;
+        return this.sipaddress;
     }
 
     public void setSipaddress(String sipaddress)
@@ -286,7 +320,7 @@ public class Parameter
 
     public String getThp()
     {
-        return thp;
+        return this.thp;
     }
 
     public void setThp(String thp)
@@ -296,7 +330,7 @@ public class Parameter
 
     public String getThp_mob()
     {
-        return thp_mob;
+        return this.thp_mob;
     }
 
     public void setThp_mob(String thp_mob)
@@ -306,7 +340,7 @@ public class Parameter
 
     public String getThp_desk()
     {
-        return thp_desk;
+        return this.thp_desk;
     }
 
     public void setThp_desk(String thp_desk)
@@ -316,7 +350,7 @@ public class Parameter
 
     public String getThs()
     {
-        return ths;
+        return this.ths;
     }
 
     public void setThs(String ths)
@@ -326,7 +360,7 @@ public class Parameter
 
     public String getThs_mob()
     {
-        return ths_mob;
+        return this.ths_mob;
     }
 
     public void setThs_mob(String ths_mob)
@@ -336,7 +370,7 @@ public class Parameter
 
     public String getThs_desk()
     {
-        return ths_desk;
+        return this.ths_desk;
     }
 
     public void setThs_desk(String ths_desk)
@@ -346,7 +380,7 @@ public class Parameter
 
     public String getWholeHome()
     {
-        return wholeHome;
+        return this.wholeHome;
     }
 
     public void setWholeHome(String wholeHome)
@@ -356,7 +390,7 @@ public class Parameter
 
     public String getPhone()
     {
-        return phone;
+        return this.phone;
     }
 
     public void setPhone(String phone)
@@ -366,7 +400,7 @@ public class Parameter
 
     public String getFiberPhone()
     {
-        return fiberPhone;
+        return this.fiberPhone;
     }
 
     public void setFiberPhone(String fiberPhone)
@@ -376,7 +410,7 @@ public class Parameter
 
     public String getBatteryBackup()
     {
-        return batteryBackup;
+        return this.batteryBackup;
     }
 
     public void setBatteryBackup(String batteryBackup)
@@ -387,38 +421,38 @@ public class Parameter
     @Override
     public String toString()
     {
-        return "Parameter{" +
-                "tv='" + tv + '\'' +
-                ", iptv='" + iptv + '\'' +
-                ", dvr='" + dvr + '\'' +
-                ", dvr_pc='" + dvr_pc + '\'' +
-                ", dvr_rc='" + dvr_rc + '\'' +
-                ", dvr_return='" + dvr_return + '\'' +
-                ", stb='" + stb + '\'' +
-                ", stb_pc='" + stb_pc + '\'' +
-                ", stb_rc='" + stb_rc + '\'' +
-                ", stb_return='" + stb_return + '\'' +
-                ", hdelite='" + hdelite + '\'' +
-                ", sportstier='" + sportstier + '\'' +
-                ", starz='" + starz + '\'' +
-                ", cinemax='" + cinemax + '\'' +
-                ", showtime='" + showtime + '\'' +
-                ", hbo='" + hbo + '\'' +
-                ", speed='" + speed + '\'' +
-                ", router='" + router + '\'' +
-                ", prouter='" + prouter + '\'' +
-                ", urouter='" + urouter + '\'' +
-                ", sipaddress='" + sipaddress + '\'' +
-                ", thp='" + thp + '\'' +
-                ", thp_mob='" + thp_mob + '\'' +
-                ", thp_desk='" + thp_desk + '\'' +
-                ", ths='" + ths + '\'' +
-                ", ths_mob='" + ths_mob + '\'' +
-                ", ths_desk='" + ths_desk + '\'' +
-                ", wholeHome='" + wholeHome + '\'' +
-                ", phone='" + phone + '\'' +
-                ", fiberPhone='" + fiberPhone + '\'' +
-                ", batteryBackup='" + batteryBackup + '\'' +
+        return "Parameters {" +
+                "tv='" + getTv() + '\'' +
+                ", iptv='" + getIptv() + '\'' +
+                ", dvr='" + getDvr() + '\'' +
+                ", dvr_pc='" + getDvr_pc() + '\'' +
+                ", dvr_rc='" + getDvr_rc() + '\'' +
+                ", dvr_return='" + getDvr_return() + '\'' +
+                ", stb='" + getStb() + '\'' +
+                ", stb_pc='" + getStb_pc() + '\'' +
+                ", stb_rc='" + getStb_rc() + '\'' +
+                ", stb_return='" + getStb_return() + '\'' +
+                ", hdelite='" + getHdelite() + '\'' +
+                ", sportstier='" + getSportstier() + '\'' +
+                ", starz='" + getStarz() + '\'' +
+                ", cinemax='" + getCinemax() + '\'' +
+                ", showtime='" + getShowtime() + '\'' +
+                ", hbo='" + getHbo() + '\'' +
+                ", speed='" + getSpeed() + '\'' +
+                ", router='" + getRouter() + '\'' +
+                ", prouter='" + getProuter() + '\'' +
+                ", urouter='" + getUrouter() + '\'' +
+                ", sipaddress='" + getSipaddress() + '\'' +
+                ", thp='" + getThp() + '\'' +
+                ", thp_mob='" + getThp_mob() + '\'' +
+                ", thp_desk='" + getThp_desk() + '\'' +
+                ", ths='" + getThs() + '\'' +
+                ", ths_mob='" + getThs_mob() + '\'' +
+                ", ths_desk='" + getThs_desk() + '\'' +
+                ", wholeHome='" + getWholeHome() + '\'' +
+                ", phone='" + getPhone() + '\'' +
+                ", fiberPhone='" + getFiberPhone() + '\'' +
+                ", batteryBackup='" + getBatteryBackup() + '\'' +
                 '}';
     }
 

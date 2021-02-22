@@ -1,14 +1,17 @@
 package com.metronet.mis.utilities.common;
 
+import java.util.Random;
+
 /**
  * Custom methods to help with random processes
  */
 public class Customs
 {
+   static Random random = new Random();
+
     public static String randomZeroOne()
     {
-        double temp = Math.random();
-        if (temp < 0.5)
+        if (random.nextBoolean())
         {
             return "0";
         }
@@ -35,6 +38,5 @@ public class Customs
             return "500M";
         }
         else return "1GB";
-
     }
 }

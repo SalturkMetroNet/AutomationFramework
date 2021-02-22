@@ -18,6 +18,14 @@ public class Address
         this.active = active;
     }
 
+    public Address(String addressFromDB)
+    {
+        this.city = addressFromDB.substring(addressFromDB.indexOf(",")+1);
+        this.street = addressFromDB.substring(0, addressFromDB.indexOf(","));
+        this.type = "RESIDENTIAL";
+        this.active = "Y";
+    }
+
     @Override
     public String toString()
     {

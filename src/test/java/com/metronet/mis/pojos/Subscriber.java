@@ -29,15 +29,15 @@ public class Subscriber
     @Override
     public String toString()
     {
-        return "Subscriber Info:" + "\n" +
-                "First Name: " + firstName + '\n' +
-                "Last Name: " + lastName + '\n' +
-                "Contact Email: " + contactEmail + '\n' +
-                "Contact Phone: " + contactPhone + '\n' +
-                "Date Of Birth: " + dateOfBirth + '\n' +
-                "Service Address: " + serviceAddress + '\n' +
-                "Subscriber ID: " + subId + '\n' +
-                "Assigned Phone Number: " + newPhoneNumber;
+        return "Subscriber Info:"+
+                " | First Name: " + firstName +
+                " | Last Name: " + lastName +
+                " | Contact Email: " + contactEmail +
+                " | Contact Phone: " + contactPhone +
+                " | Date Of Birth: " + dateOfBirth +
+                " | Service Address: " + serviceAddress +
+                " | Subscriber ID: " + subId +
+                " | Assigned Phone Number: " + newPhoneNumber;
     }
 
     public String getFirstName()

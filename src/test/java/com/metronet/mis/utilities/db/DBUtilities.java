@@ -1,5 +1,8 @@
 package com.metronet.mis.utilities.db;
 
+import com.metronet.mis.pojos.Address;
+import com.metronet.mis.utilities.common.ConfigurationReader;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,18 +16,43 @@ public class DBUtilities
     private static ResultSet resultSet;
 
 
-    public static void createConnection(String DB_URL, String DB_USERNAME, String DB_PASSWORD)
+    public static Connection createConnection()
     {
+        String DB_URL = ConfigurationReader.getProperty("DB_CONNECTION_STRING");
+        String DB_USERNAME = ConfigurationReader.getProperty("DB_USERNAME");
+        String DB_PASSWORD = ConfigurationReader.getProperty("DB_PASSWORD");
+
+        System.setProperty("oracle.net.tns_admin", "C:/app/client/Administrator/product/18.0.0/client_1/network/admin");
         try
         {
-            System.setProperty("oracle.net.tns_admin", "C:/app/client/Administrator/product/18.0.0/client_1/network/admin");
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
         }
-        catch (SQLException e)
+        catch (SQLException throwables)
         {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            throwables.printStackTrace();
         }
+
+        return connection;
+
+    }
+
+    public static List<Address> getData() throws SQLException
+    {
+        Connection connection = createConnection();
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        ResultSet resultSet = statement.executeQuery(ConfigurationReader.getProperty("address"));
+
+        List<Address> addressSet = new ArrayList<>();
+        Address address;
+
+        resultSet.beforeFirst();
+        while (resultSet.next())
+        {
+            address = new Address(resultSet.getString("Address"));
+            addressSet.add(address);
+        }
+        address = null;
+        return addressSet;
     }
 
     public static void destroy()

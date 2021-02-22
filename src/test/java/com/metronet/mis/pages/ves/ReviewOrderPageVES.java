@@ -14,6 +14,8 @@ import org.openqa.selenium.support.ui.Select;
  */
 public class ReviewOrderPageVES extends VESBasePage
 {
+    SearchPageVES searchPage = new SearchPageVES();
+
     /**
      * Schedule Installation Date textfield
      */
@@ -63,6 +65,12 @@ public class ReviewOrderPageVES extends VESBasePage
     public WebElement signatureSubmitButton;
 
     /**
+     * Error alert
+     */
+    @FindBy (xpath = "//div[@class='alert hidden']")
+    public WebElement errorAlert;
+
+    /**
      * fillOutReviewOrderInputs(intallDate, installTime, allStartDate, orderPlacedIndex, orderNotes
      * @param installDate
      * @param installTimeIndex
@@ -90,14 +98,14 @@ public class ReviewOrderPageVES extends VESBasePage
         signatureCanvas.click();
         BrowserUtils.impWait(30);
         signatureSubmitButton.click();
-        BrowserUtils.impWait(200);
+        BrowserUtils.impWait(1000);
 
-        logger.info("Filled form with:\n"
-                + "Install Date: " + installDate + "\n"
-                + "Install Time Choice: " + installTime.getFirstSelectedOption().getText() + "\n"
-                + "Service Start Dates (All): " + allStartDate + "\n"
-                + "Order Placed Choice: " + orderPlaced.getFirstSelectedOption().getText() + "\n"
-                + "Order Notes: " + orderNotes + "\n"
+        logger.info("Filled form with: "
+                + "Install Date: " + installDate
+                + " | Install Time Choice: " + installTime.getFirstSelectedOption().getText()
+                + " | Service Start Dates (All): " + allStartDate
+                + " | Order Placed Choice: " + orderPlaced.getFirstSelectedOption().getText()
+                + " | Order Notes: " + orderNotes
         );
     }
 }
